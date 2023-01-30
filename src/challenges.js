@@ -1,5 +1,5 @@
 // Desafio 1 - Crie a função compareTrue
-
+//.
 // Desafio 2 - Crie a função splitSentence
 
 // Desafio 3 - Crie a função concatName
