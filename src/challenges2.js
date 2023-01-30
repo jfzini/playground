@@ -50,6 +50,22 @@ const triangleCheck = (lineA, lineB, lineC) => {
 };
 
 // Desafio 13 - Crie a função hydrate
+const sumArray = (numArray) => {
+  let sum = 0;
+  for (const number of numArray) {
+    sum += number;
+  }
+  return sum;
+};
+const hydrate = (string) => {
+  let cups = string.match(/\d+/g);
+  if (cups.length === 1 && parseInt(cups) === 1) {
+    return '1 copo de água';
+  }
+  return `${sumArray(cups.map((numbers) => parseInt(numbers)))} copos de água`;
+};
+
+console.log(hydrate('1 copo de vinho'));
 
 /* eslint no-undef: 0 */
 
