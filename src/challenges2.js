@@ -59,13 +59,11 @@ const sumArray = (numArray) => {
 };
 const hydrate = (string) => {
   let cups = string.match(/\d+/g);
-  if (cups.length === 1 && parseInt(cups) === 1) {
+  if (cups.length === 1 && parseInt(cups, 10) === 1) {
     return '1 copo de água';
   }
-  return `${sumArray(cups.map((numbers) => parseInt(numbers)))} copos de água`;
+  return `${sumArray(cups.map((numbers) => parseInt(numbers, 10)))} copos de água`;
 };
-
-console.log(hydrate('1 copo de vinho'));
 
 /* eslint no-undef: 0 */
 
