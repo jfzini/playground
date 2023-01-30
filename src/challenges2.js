@@ -39,14 +39,22 @@ const generatePhoneNumber = (numArray) => {
 };
 
 // Desafio 12 -  Crie a função triangleCheck
+const findLine = (lineA, lineB, lineC) => {
+  const numArray = [lineA, lineB, lineC];
+  let biggestLine = lineA;
+  for (const number of numArray) {
+    if (number > biggestLine) {
+      biggestLine = number;
+    }
+  }
+  return biggestLine;
+};
 
 const triangleCheck = (lineA, lineB, lineC) => {
-  if ((lineA < lineB + lineC && lineA > Math.abs(lineB - lineC))
-    || (lineB < lineA + lineC && lineB > Math.abs(lineA - lineC))
-    || (lineC < lineB + lineA && lineC > Math.abs(lineB - lineA))) {
-    return true;
+  if (findLine(lineA, lineB, lineC) > (lineA + lineB + lineC) - findLine(lineA, lineB, lineC)) {
+    return false;
   }
-  return false;
+  return true;
 };
 
 // Desafio 13 - Crie a função hydrate
