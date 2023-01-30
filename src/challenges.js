@@ -1,40 +1,29 @@
 // Desafio 1 - Crie a função compareTrue
 
-const girafa = true;
-const elefante = false;
-const macaco = false;
-
-
 const compareTrue = (param1, param2) => {
-  if (param1 == true && param2 == true) {
+  if (param1 && param2) {
     return true;
-  } else if (param1 == true && param2 == false) {
-    return false;
-  } else if (param2 == true && param1 == false) {
-    return false;
-  } else if (param1 == false && param2 == false) {
-    return false;
   }
-  return 'Invalid';
-}
+  return false;
+};
 
 // Desafio 2 - Crie a função splitSentence
 
 const splitSentence = (string) => {
-  if (typeof string == 'string') {
+  if (typeof string === 'string') {
     const resultado = string.split(' ');
     return resultado;
   }
   return 'Invalid';
-}
+};
 
 // Desafio 3 - Crie a função concatName
 
-const concatName = (array) => array[array.length - 1] + ', ' + array[0];
+const concatName = (array) => `${array[array.length - 1]}, ${array[0]}`;
 
 // Desafio 4 - Crie a função footballPoints
 
-const footballPoints = (wins, ties) =>  wins * 3 + ties;
+const footballPoints = (wins, ties) => wins * 3 + ties;
 
 // Desafio 5 - Crie a função highestCount
 
@@ -45,42 +34,45 @@ const highestCount = (numArray) => {
     if (number > highestNumber) {
       highestNumber = number;
     }
-  };
+  }
   for (const number of numArray) {
     if (number === highestNumber) {
       highestNumberTimes += 1;
     }
-  };
+  }
   return highestNumberTimes;
-}
+};
 
 // Desafio 6 - Crie as funções calcTriangleArea, calcRectangleArea e calcAllAreas
 
-const calcTriangleArea = (base, height) => base * height / 2;
+const calcTriangleArea = (base, height) => (base * height) / 2;
 
 const calcRectangleArea = (base, height) => base * height;
 
 const calcAllAreas = (base, height, form) => {
   if (form === 'retângulo') {
-    return 'O valor da área do retângulo é de: ' + calcRectangleArea(base, height);
-  } else if (form === 'triângulo'){
-    return 'O valor da área do triângulo é de: ' + calcTriangleArea(base, height);
+    return `O valor da área do retângulo é de: ${calcRectangleArea(base, height)}`;
   }
-  return 'Não foi possível fazer o cálculo, insira uma forma geométrica válida'
-}
+  if (form === 'triângulo') {
+    return `O valor da área do triângulo é de: ${calcTriangleArea(base, height)}`;
+  }
+  return 'Não foi possível fazer o cálculo, insira uma forma geométrica válida';
+};
 
 // Desafio 7 - Crie a função catAndMouse
 
 const catAndMouse = (mouse, cat1, cat2) => {
   if (Math.abs(mouse - cat1) < Math.abs(mouse - cat2)) {
     return 'cat1';
-  } else if (Math.abs(mouse - cat1) > Math.abs(mouse - cat2)) {
+  }
+  if (Math.abs(mouse - cat1) > Math.abs(mouse - cat2)) {
     return 'cat2';
-  } else if (Math.abs(mouse - cat1) === Math.abs(mouse - cat2)) {
+  }
+  if (Math.abs(mouse - cat1) === Math.abs(mouse - cat2)) {
     return 'os gatos trombam e o rato foge';
   }
   return 'Invalid';
-}
+};
 
 // Desafio 8 - Crie a função fizzBuzz
 
@@ -98,7 +90,7 @@ const fizzBuzz = (numArray) => {
     }
   }
   return stringArray;
-}
+};
 
 // Desafio 9 - Crie a função encode e a função decode
 
@@ -106,41 +98,41 @@ const encode = (string) => {
   let encoded = '';
   for (const character of string) {
     if (character === 'a') {
-      encoded = encoded + '1';
+      encoded += '1';
     } else if (character === 'e') {
-      encoded = encoded + '2';
+      encoded += '2';
     } else if (character === 'i') {
-      encoded = encoded + '3';
+      encoded += '3';
     } else if (character === 'o') {
-      encoded = encoded + '4';
+      encoded += '4';
     } else if (character === 'u') {
-      encoded = encoded + '5';
+      encoded += '5';
     } else {
-      encoded = encoded + character;
+      encoded += character;
     }
   }
   return encoded;
-}
+};
 
 const decode = (string) => {
   let decoded = '';
   for (const character of string) {
     if (character === '1') {
-      decoded = decoded + 'a';
+      decoded += 'a';
     } else if (character === '2') {
-      decoded = decoded + 'e';
+      decoded += 'e';
     } else if (character === '3') {
-      decoded = decoded + 'i';
+      decoded += 'i';
     } else if (character === '4') {
-      decoded = decoded + 'o';
+      decoded += 'o';
     } else if (character === '5') {
-      decoded = decoded + 'u';
+      decoded += 'u';
     } else {
-      decoded = decoded + character;
+      decoded += character;
     }
   }
   return decoded;
-}
+};
 
 // Desafio 10 - Crie a função techList
 
@@ -149,11 +141,11 @@ const techList = (array, string) => {
   for (const skills of array.sort()) {
     objectArray.push({
       tech: skills,
-      name: string
-    })
+      name: string,
+    });
   }
   return objectArray;
-}
+};
 
 // Não modifique essas linhas
 module.exports = {

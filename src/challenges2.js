@@ -25,29 +25,29 @@ const generatePhoneNumber = (numArray) => {
 
   let phoneNumber = '';
   for (const numIndex in numArray) {
-    if (numIndex == 0) {
-      phoneNumber = '(' + numArray[0];
-    } else if (numIndex == 1) {
-      phoneNumber = phoneNumber + numArray[1] + ') ';
-    } else if (numIndex == 6) {
-      phoneNumber = phoneNumber + numArray[6] + '-';
+    if (numIndex === '0') {
+      phoneNumber = `(${numArray[0]}`;
+    } else if (numIndex === '1') {
+      phoneNumber += `${numArray[1]}) `;
+    } else if (numIndex === '6') {
+      phoneNumber += `${numArray[6]}-`;
     } else {
-      phoneNumber = phoneNumber + numArray[numIndex];
+      phoneNumber += numArray[numIndex];
     }
   }
-return phoneNumber;
-}
+  return phoneNumber;
+};
 
 // Desafio 12 -  Crie a função triangleCheck
 
 const triangleCheck = (lineA, lineB, lineC) => {
-  if((lineA < lineB + lineC && lineA > Math.abs(lineB - lineC))
+  if ((lineA < lineB + lineC && lineA > Math.abs(lineB - lineC))
     || (lineB < lineA + lineC && lineB > Math.abs(lineA - lineC))
     || (lineC < lineB + lineA && lineC > Math.abs(lineB - lineA))) {
     return true;
   }
   return false;
-}
+};
 
 // Desafio 13 - Crie a função hydrate
 
