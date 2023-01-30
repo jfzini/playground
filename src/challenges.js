@@ -106,14 +106,16 @@ const encode = (string) => { //  https://www.youtube.com/watch?v=G3BS3sh3D8Q&ab_
   return encoded.join('');
 };
 
-const decode = (string) => { //  https://www.youtube.com/watch?v=G3BS3sh3D8Q&ab_channel=ProgrammingwithMosh
+const decode = (string) => { //  fazendo com switch
   const decoded = string.split('').map((character) => {
-    if (character === '1') { return 'a'; }
-    if (character === '2') { return 'e'; }
-    if (character === '3') { return 'i'; }
-    if (character === '4') { return 'o'; }
-    if (character === '5') { return 'u'; }
-    return character;
+    switch (character) {
+    case '1': return 'a';
+    case '2': return 'e';
+    case '3': return 'i';
+    case '4': return 'o';
+    case '5': return 'u';
+    default: return character;
+    }
   });
   return decoded.join('');
 };
