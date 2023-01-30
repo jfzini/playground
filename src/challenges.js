@@ -94,7 +94,7 @@ const fizzBuzz = (numArray) =>
 
 // Desafio 9 - Crie a função encode e a função decode
 
-const encode = (string) => {
+const encode = (string) => { //  https://www.youtube.com/watch?v=G3BS3sh3D8Q&ab_channel=ProgrammingwithMosh
   const encoded = string.split('').map((character) => {
     if (character === 'a') { return '1'; }
     if (character === 'e') { return '2'; }
@@ -106,24 +106,16 @@ const encode = (string) => {
   return encoded.join('');
 };
 
-const decode = (string) => {
-  let decoded = '';
-  for (const character of string) {
-    if (character === '1') {
-      decoded += 'a';
-    } else if (character === '2') {
-      decoded += 'e';
-    } else if (character === '3') {
-      decoded += 'i';
-    } else if (character === '4') {
-      decoded += 'o';
-    } else if (character === '5') {
-      decoded += 'u';
-    } else {
-      decoded += character;
-    }
-  }
-  return decoded;
+const decode = (string) => { //  https://www.youtube.com/watch?v=G3BS3sh3D8Q&ab_channel=ProgrammingwithMosh
+  const decoded = string.split('').map((character) => {
+    if (character === '1') { return 'a'; }
+    if (character === '2') { return 'e'; }
+    if (character === '3') { return 'i'; }
+    if (character === '4') { return 'o'; }
+    if (character === '5') { return 'u'; }
+    return character;
+  });
+  return decoded.join('');
 };
 
 // Desafio 10 - Crie a função techList
