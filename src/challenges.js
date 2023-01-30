@@ -26,17 +26,19 @@ const concatName = (array) => `${array[array.length - 1]}, ${array[0]}`;
 const footballPoints = (wins, ties) => wins * 3 + ties;
 
 // Desafio 5 - Crie a função highestCount
+// const checkHighestNumber = (numArray) => {
+//   let highestNumber = numArray[0];
+// }
 
 const highestCount = (numArray) => {
   let highestNumber = numArray[0];
   let highestNumberTimes = 0;
-  for (const number of numArray) {
-    if (number > highestNumber) {
-      highestNumber = number;
+  for (let indexArray = 0; indexArray < numArray.length; indexArray += 1) {
+    if (numArray[indexArray] > highestNumber) {
+      highestNumberTimes = 0;
+      highestNumber = numArray[indexArray];
     }
-  }
-  for (const number of numArray) {
-    if (number === highestNumber) {
+    if (numArray[indexArray] === highestNumber) {
       highestNumberTimes += 1;
     }
   }
@@ -76,42 +78,32 @@ const catAndMouse = (mouse, cat1, cat2) => {
 
 // Desafio 8 - Crie a função fizzBuzz
 
-const fizzBuzz = (numArray) => {
-  const stringArray = [];
-  for (const number of numArray) {
+const fizzBuzz = (numArray) =>
+  numArray.map((number) => {
     if (number % 3 === 0 && number % 5 === 0) {
-      stringArray.push('fizzBuzz');
-    } else if (number % 3 === 0) {
-      stringArray.push('fizz');
-    } else if (number % 5 === 0) {
-      stringArray.push('buzz');
-    } else {
-      stringArray.push('bug!');
+      return 'fizzBuzz';
     }
-  }
-  return stringArray;
-};
+    if (number % 3 === 0) {
+      return 'fizz';
+    }
+    if (number % 5 === 0) {
+      return 'buzz';
+    }
+    return 'bug!';
+  });
 
 // Desafio 9 - Crie a função encode e a função decode
 
 const encode = (string) => {
-  let encoded = '';
-  for (const character of string) {
-    if (character === 'a') {
-      encoded += '1';
-    } else if (character === 'e') {
-      encoded += '2';
-    } else if (character === 'i') {
-      encoded += '3';
-    } else if (character === 'o') {
-      encoded += '4';
-    } else if (character === 'u') {
-      encoded += '5';
-    } else {
-      encoded += character;
-    }
-  }
-  return encoded;
+  const encoded = string.split('').map((character) => {
+    if (character === 'a') { return '1'; }
+    if (character === 'e') { return '2'; }
+    if (character === 'i') { return '3'; }
+    if (character === 'o') { return '4'; }
+    if (character === 'u') { return '5'; }
+    return character;
+  });
+  return encoded.join('');
 };
 
 const decode = (string) => {
