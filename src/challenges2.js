@@ -2,12 +2,12 @@
 
 const generatePhoneNumber = (numArray) => {
   if (numArray.length !== 11) {
-    return 'Array com tamanho incorreto';
+    return 'Array com tamanho incorreto.';
   }
 
   for (const number of numArray) {
     if (number < 0 || number > 9) {
-      return 'Não é possível gerar um número de telefone com esses valores';
+      return 'não é possível gerar um número de telefone com esses valores';
     }
   }
 
@@ -19,7 +19,7 @@ const generatePhoneNumber = (numArray) => {
       }
     }
     if (frequency >= 3) {
-      return 'Não é possível gerar um número de telefone com esses valores';
+      return 'não é possível gerar um número de telefone com esses valores';
     }
   }
 
