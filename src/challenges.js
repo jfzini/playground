@@ -95,28 +95,26 @@ const fizzBuzz = (numArray) =>
 // Desafio 9 - Crie a função encode e a função decode
 
 const encode = (string) => { //  https://www.youtube.com/watch?v=G3BS3sh3D8Q&ab_channel=ProgrammingwithMosh
-  const encoded = string.split('').map((character) => {
-    if (character === 'a') { return '1'; }
-    if (character === 'e') { return '2'; }
-    if (character === 'i') { return '3'; }
-    if (character === 'o') { return '4'; }
-    if (character === 'u') { return '5'; }
-    return character;
-  });
+  let codes = {
+    a: '1',
+    e: '2',
+    i: '3',
+    o: '4',
+    u: '5',
+  };
+  const encoded = string.split('').map((character) => (codes[character] || character));
   return encoded.join('');
 };
 
-const decode = (string) => { //  fazendo com switch
-  const decoded = string.split('').map((character) => {
-    switch (character) {
-    case '1': return 'a';
-    case '2': return 'e';
-    case '3': return 'i';
-    case '4': return 'o';
-    case '5': return 'u';
-    default: return character;
-    }
-  });
+const decode = (string) => { //  https://www.youtube.com/watch?v=G3BS3sh3D8Q&ab_channel=ProgrammingwithMosh
+  let codes = {
+    1: 'a',
+    2: 'e',
+    3: 'i',
+    4: 'o',
+    5: 'u',
+  };
+  const decoded = string.split('').map((character) => (codes[character] || character));
   return decoded.join('');
 };
 

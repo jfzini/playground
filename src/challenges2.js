@@ -1,28 +1,25 @@
 // Desafio 11 - Crie a função generatePhoneNumber
-
-const generatePhoneNumber = (numArray) => {
-  if (numArray.length !== 11) {
-    return 'Array com tamanho incorreto.';
-  }
-
+const checkInvalidNumber = (numArray) => {
   for (const number of numArray) {
     if (number < 0 || number > 9) {
-      return 'não é possível gerar um número de telefone com esses valores';
+      return false;
     }
   }
+  return true;
+};
 
+const checkNumberRepetition = (numArray) => {
+  const frequency = {};
   for (const number of numArray) {
-    let frequency = 0;
-    for (const numberRepetition of numArray) {
-      if (number === numberRepetition) {
-        frequency += 1;
-      }
-    }
-    if (frequency >= 3) {
-      return 'não é possível gerar um número de telefone com esses valores';
+    frequency[number] = (frequency[number] || 0) + 1;
+    if (frequency[number] >= 3) {
+      return false;
     }
   }
+  return true;
+};
 
+const writeNumber = (numArray) => {
   let phoneNumber = '';
   for (const numIndex in numArray) {
     if (numIndex === '0') {
@@ -36,6 +33,16 @@ const generatePhoneNumber = (numArray) => {
     }
   }
   return phoneNumber;
+};
+
+const generatePhoneNumber = (numArray) => {
+  if (numArray.length !== 11) {
+    return 'Array com tamanho incorreto.';
+  }
+  if (!checkInvalidNumber(numArray) || !checkNumberRepetition(numArray)) {
+    return 'não é possível gerar um número de telefone com esses valores';
+  }
+  return writeNumber(numArray);
 };
 
 // Desafio 12 -  Crie a função triangleCheck
