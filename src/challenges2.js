@@ -19,16 +19,14 @@ const checkNumberRepetition = (numArray) => {
   return true;
 };
 
-const writeNumber = (n) => `(${n[0]}${n[1]}) ${n[2]}${n[3]}${n[4]}${n[5]}${n[6]}-${n[7]}${n[8]}${n[9]}${n[10]}`;
-
-const generatePhoneNumber = (numArray) => {
-  if (numArray.length !== 11) {
+const generatePhoneNumber = (num) => {
+  if (num.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
-  if (!checkInvalidNumber(numArray) || !checkNumberRepetition(numArray)) {
+  if (!checkInvalidNumber(num) || !checkNumberRepetition(num)) {
     return 'não é possível gerar um número de telefone com esses valores';
   }
-  return writeNumber(numArray);
+  return `(${num[0]}${num[1]}) ${num.slice(2, 7).join('')}-${num.slice(7).join('')}`;
 };
 
 // Desafio 12 -  Crie a função triangleCheck
