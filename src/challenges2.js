@@ -19,21 +19,7 @@ const checkNumberRepetition = (numArray) => {
   return true;
 };
 
-const writeNumber = (numArray) => {
-  let phoneNumber = '';
-  for (const numIndex in numArray) {
-    if (numIndex === '0') {
-      phoneNumber = `(${numArray[0]}`;
-    } else if (numIndex === '1') {
-      phoneNumber += `${numArray[1]}) `;
-    } else if (numIndex === '6') {
-      phoneNumber += `${numArray[6]}-`;
-    } else {
-      phoneNumber += numArray[numIndex];
-    }
-  }
-  return phoneNumber;
-};
+const writeNumber = (n) => `(${n[0]}${n[1]}) ${n[2]}${n[3]}${n[4]}${n[5]}${n[6]}-${n[7]}${n[8]}${n[9]}${n[10]}`;
 
 const generatePhoneNumber = (numArray) => {
   if (numArray.length !== 11) {
