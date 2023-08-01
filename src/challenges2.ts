@@ -1,3 +1,5 @@
+import { PhoneNumberFrequency } from './typings/types';
+
 // Desafio 11 - Crie a função generatePhoneNumber
 const checkInvalidNumber = (numArray: number[]): boolean => {
   for (const number of numArray) {
@@ -7,7 +9,7 @@ const checkInvalidNumber = (numArray: number[]): boolean => {
 };
 
 const checkNumberRepetition = (numArray: number[]): boolean => {
-  const frequency: {[number: number]: number } = {};
+  const frequency: PhoneNumberFrequency = {};
   for (const number of numArray) {
     frequency[number] = (frequency[number] || 0) + 1;
     if (frequency[number] >= 3) return false;
