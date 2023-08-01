@@ -1,4 +1,4 @@
-const { concatName } = require('../src/challenges');
+import { concatName } from '../src/challenges';
 
 describe('3 - Crie uma função que use concatenação de strings', () => {
   it('Retorne \'Paolillo, Lucas\' quando o parâmetro passado na funcão concatName seja [\'Lucas\', \'Cassiano\', \'Ferraz\', \'Paolillo\']', () => {

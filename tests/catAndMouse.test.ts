@@ -1,4 +1,4 @@
-const { catAndMouse } = require('../src/challenges');
+import { catAndMouse } from '../src/challenges';
 
 describe('7 - Crie uma função de Caça ao Rato', () => {
   it('Retorne a string \'cat2\' caso a função catAndMouse receba o parâmetros onde gato cat2 esteja a 2 unidades de distância do rato e cat1 esteja a 3 unidades de distância do rato', () => {

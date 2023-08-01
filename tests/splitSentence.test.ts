@@ -1,4 +1,4 @@
-const { splitSentence } = require('../src/challenges');
+import { splitSentence } from '../src/challenges';
 
 describe('2 - Crie uma função que divida uma frase', () => {
   it('Retorne o valor [\'go\', \'Trybe\'] se a função receber a string \'go Trybe\'', () => {

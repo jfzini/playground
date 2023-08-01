@@ -1,4 +1,4 @@
-const { footballPoints } = require('../src/challenges');
+import { footballPoints } from '../src/challenges';
 
 describe('4 - Crie uma função que calcula a quantidade de pontos em um campeonato de futebol', () => {
   it('Retorne 50 pontos quando o time tenha 14 vitórias e 8 empates', () => {

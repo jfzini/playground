@@ -1,4 +1,4 @@
-const { compareTrue } = require('../src/challenges');
+import { compareTrue } from '../src/challenges';
 
 describe('1 - Crie uma função usando o operador &&', () => {
   it('Retorne false quando se chamar a função compareTrue com um parâmetro de valor false e outro de valor true', () => {

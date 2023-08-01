@@ -1,4 +1,4 @@
-const { calcTriangleArea, calcRectangleArea, calcAllAreas } = require('../src/challenges');
+import { calcTriangleArea, calcRectangleArea, calcAllAreas } from '../src/challenges';
 
 describe('6 - Crie 3 funções para calcular as áreas de um triângulo e de um retângulo', () => {
   it('Retorne o valor 250 quando a função calcTriangleArea é chamada com o parâmetro base com o valor 10 e o parâmetro height com o valor 50', () => {

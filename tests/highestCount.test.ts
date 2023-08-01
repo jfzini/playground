@@ -1,4 +1,4 @@
-const { highestCount } = require('../src/challenges');
+import { highestCount } from '../src/challenges';
 
 describe('5 - Crie uma função que calcula o número de repetições do maior número', () => {
   it('Retorne 2 quando o parâmetro passado na funcão highestCount seja [1, 9, 2, 3, 9, 5, 7]', () => {

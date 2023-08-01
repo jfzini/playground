@@ -1,3 +1,5 @@
+import { Codes, TechList } from './typings/types';
+
 // Desafio 1 - Crie a função compareTrue
 
 const compareTrue = (param1: boolean, param2: boolean): boolean => param1 && param2;
@@ -66,24 +68,24 @@ const fizzBuzz = (numArray: number[]): string[] =>
 // Desafio 9 - Crie a função encode e a função decode
 
 const encode = (string: string): string => {
-  const codes = {
+  const codes: Codes = {
     a: '1',
     e: '2',
     i: '3',
     o: '4',
     u: '5',
   };
-  const encoded = string.split('').map((character) => codes[character] || character);
+  const encoded = string.split('').map((character: string) => codes[character] || character);
   return encoded.join('');
 };
 
 const decode = (string: string): string => {
-  const codes = {
-    1: 'a',
-    2: 'e',
-    3: 'i',
-    4: 'o',
-    5: 'u',
+  const codes: Codes = {
+    '1': 'a',
+    '2': 'e',
+    '3': 'i',
+    '4': 'o',
+    '5': 'u',
   };
   const decoded = string.split('').map((character) => codes[character] || character);
   return decoded.join('');
@@ -91,12 +93,10 @@ const decode = (string: string): string => {
 
 // Desafio 10 - Crie a função techList
 
-type TechList = { tech: string; name: string };
-
 const techList = (array: string[], name: string): TechList[] =>
   array.sort().map((tech) => ({ tech, name }));
 
-module.exports = {
+export {
   calcTriangleArea,
   calcRectangleArea,
   calcAllAreas,

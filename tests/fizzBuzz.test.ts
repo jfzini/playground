@@ -1,4 +1,4 @@
-const { fizzBuzz } = require('../src/challenges');
+import { fizzBuzz } from '../src/challenges';
 
 describe('8 - Crie uma função FizzBuzz', () => {
   it('Retorne as strings [\'bug!\', \'fizzBuzz\', \'bug!\', \'fizz\', \'fizzBuzz\'] quando é passado os parâmetros [2, 15, 7, 9, 45] para função fizzBuzz', () => {
